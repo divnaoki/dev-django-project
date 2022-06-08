@@ -7,5 +7,5 @@ class Todo(models.Model):
   description = models.TextField(blank=True, null=True)
   create_time = models.DateTimeField(default=timezone.now)
   update_time = models.DateTimeField(default=timezone.now)
-  limit_date = models.DateField(null=False)
+  limit_date = models.DateTimeField(null=False)
   status = models.BooleanField(default=False)

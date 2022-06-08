@@ -21,7 +21,9 @@ class CreateTodoForm(forms.ModelForm):
     )
   )
   limit_date = forms.DateTimeField(
-    label="Limit date"
+    label="Limit date",
+    widget=forms.DateTimeInput(attrs={"type": "datetime-local"}),
+    input_formats=['%Y-%m-%dT%H:%M']
   )
   class Meta:
     model = Todo

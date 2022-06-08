@@ -15,6 +15,9 @@ def create_view(request):
   form = CreateTodoForm()
   if request.method == "POST":
     form = CreateTodoForm(request.POST)
+    if form.is_valid():
+      form.save()
+      
   context = {
     "form": form
   }

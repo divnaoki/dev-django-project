@@ -2,11 +2,26 @@
 {% block title %} {{ block.super }} Index {% endblock %}
 {% block content %}
 {% if items %}
-  <ul>
+<table border="1">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>title</th>
+      <th>description</th>
+      <th>limit</th>
+    </tr>
+  </thead>
+  <tbody>
     {% for item in items %}
-      <li>title: {{ item.title }} description: {{ item.description}} limit date: {{ item.limit_date}}</li>
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.limit_date }}</td>
+      </tr>
     {%  endfor %}
-  </ul>
+  </tbody>
+</table>
 {% else %}
   <h1>Not Items</h1>
 {% endif %}
